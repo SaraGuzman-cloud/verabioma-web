@@ -1,0 +1,983 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL Y FUENTES
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f6f2e6;
+    color: #333;
+    padding-top: 130px; 
+    padding-bottom: 90px;
+}
+
+/* ==========================================
+   HEADER / ENCABEZADO FIJO
+   ========================================== */
+.container-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.logos {
+    background-color: #3c522c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: #eeedd1;
+}
+
+#imgSena, #imgVerabioma, #imgSenaFooter {
+    width: 70px;
+    height: auto;
+}
+
+#nav {
+    background-color: #6f894c;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#nav ul li a {
+    color: #eeedd1;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+#nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   FOOTER / PIE DE PÁGINA FIJO
+   ========================================== */
+.cabezadoSG {
+    background-color: rgba(244, 229, 208);
+    color: rgba(60, 82, 44, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+}
+
+.cabezadoSG .arriba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #6f894c;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.cabezadoSG .redes {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.cabezadoSG .redes a {
+    color: #fff;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    text-align: center;
+    margin: 0 4px;
+    transition: all 0.3s;
+}
+
+.cabezadoSG .redes a:hover {
+    color: white;
+    background-color: rgb(111, 137, 76);
+    border-color: rgb(111, 137, 76);
+}
+
+/* ==========================================
+   SECCIÓN INICIO
+   ========================================== */
+.inicio {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.inicio > h1 {
+    text-align: center;
+    margin: 0 auto 20px;
+    max-width: 700px;
+    font-size: 45px;
+}
+
+.inicio > p {
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 700px;
+    font-size: 19px;
+}
+
+#ofertas,
+#recetas,
+#resenas {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 25px 20px;
+    border-radius: 16px;
+    background-color: rgba(254, 227, 196, 0.425);
+}
+
+/* GRID / FLEX DE OFERTAS (Alineación uniforme) */
+#ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.oferta {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: calc(33.333% - 14px);
+    min-width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oferta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.oferta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #e6e2d8;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.oferta h2 {
+    margin: 10px 0;
+    font-size: 1.15rem;
+    color: rgba(60, 82, 44, 1);
+    min-height: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oferta a {
+    font-weight: bold;
+    text-decoration: line-through;
+    color: #888;
+}
+
+.oferta .pValor {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 1.15rem;
+    color: #3c522c;
+}
+
+.oferta button,
+.receta button {
+    background-color: #c1884e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: auto; /* Empuja el botón al final de la tarjeta */
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(193, 136, 78, 0.3);
+    transition: all 0.3s ease;
+}
+
+.oferta button:hover,
+.receta button:hover {
+    background-color: #a7713d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(193, 136, 78, 0.45);
+    color: #ffffff;
+}
+
+.oferta button:active,
+.receta button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(193, 136, 78, 0.3);
+}
+
+/* RECETAS EN INICIO */
+#recetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#recetas h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgba(60, 82, 44, 1);
+}
+
+.receta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.receta img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background-color: #e6e2d8;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* RESEÑAS / CARRUSEL */
+#resenas {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.resena {
+    flex: 0 0 240px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: carruselInfinito 15s linear infinite;
+}
+
+.estrellas {
+    font-size: 24px;
+    color: orange;
+}
+
+#resenas:hover .resena {
+    animation-play-state: paused;
+}
+
+@keyframes carruselInfinito {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+/* ==========================================
+   SECCIÓN DE PRODUCTOS (GRID Y TARJETAS)
+   ========================================== */
+.container-product {
+    display: none; /* Controlado dinámicamente por JS */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-product h2 {
+    color: #3c522c;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: #3c522c;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.product-card .description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.badge.off {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #d9534f;
+    color: white;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.price-old {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.price-old span {
+    text-decoration: line-through;
+}
+
+.price-current {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3c522c;
+    margin-bottom: 15px;
+}
+
+#producto .product-card[data-product],
+#ofertas .oferta[data-product],
+#producto-oferta .product-card[data-product] {
+    cursor: pointer;
+}
+
+/* ==========================================
+   BOTONES DE ACCIÓN EN TARJETAS
+   ========================================== */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.btn-add {
+    flex: 1;
+    background-color: #6f894c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background-color: #3c522c;
+}
+
+.btn-fav {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-fav:hover {
+    background-color: #e0e0e0;
+    color: #d9534f;
+}
+
+.btn-fav.activo,
+.btn-favorito.activo {
+    background-color: #e0e0e0;
+    color: #d9534f;
+}
+
+.btn-add:disabled,
+.btn-carrito:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* ==========================================
+   SECCIÓN DETALLE DE PRODUCTO
+   ========================================== */
+.container-producto {
+    display: none; /* Controlado dinámicamente por JS */
+    gap: 35px;
+    max-width: 1050px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    align-items: flex-start;
+}
+
+.etiqueta-oferta {
+    position: absolute;
+    top: -10px;
+    right: 0;
+}
+
+.badge-off {
+    background-color: #688243;
+    color: #ffffff;
+    width: 50px;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+    position: relative;
+}
+
+.badge-off::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 12px solid #688243;
+}
+
+.precio {
+    color: #777777;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.pAnt {
+    text-decoration: line-through;
+}
+
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    flex-shrink: 0;
+    gap: 20px;
+}
+
+.producto-imagen {
+    width: 100%;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.recetas {
+    background-color: #f7f5ed;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.recetas h2 {
+    font-size: 0.85rem;
+    color: #2b2b2b;
+    margin-bottom: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.galeria-recetas {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.galeria-recetas a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    text-decoration: none;
+}
+
+.galeria-recetas img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.galeria-recetas img:hover {
+    transform: scale(1.03);
+}
+
+.inforText {
+    flex: 1;
+    position: relative;
+    padding-right: 50px;
+}
+
+.inforText h1 {
+    color: #435b27;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.pAhor {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.lista-caracteristicas, .lista-beneficios {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.lista-caracteristicas li {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.lista-caracteristicas li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.inforText h3 {
+    font-size: 0.95rem;
+    color: #222222;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.lista-beneficios li {
+    font-size: 0.85rem;
+    color: #444444;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.acciones-compra {
+    margin-top: 20px;
+}
+
+.acciones-compra label {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: #333;
+    margin-right: 10px;
+}
+
+.selector-cantidad {
+    display: inline-flex;
+    background-color: #688243;
+    border-radius: 4px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.btn-menos, .btn-mas {
+    background-color: #688243;
+    color: #ffffff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-menos:hover, .btn-mas:hover {
+    background-color: #3c522c;
+}
+
+.selector-cantidad input {
+    width: 38px;
+    height: 32px;
+    border: none;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.botones-accion {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-carrito {
+    flex: 1;
+    background-color: #c1884e;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-carrito:hover {
+    background-color: #aa733b;
+}
+
+.btn-favorito {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.btn-favorito:hover {
+    background-color: #e0e0e0;
+    color: #d9534f;
+}
+
+.nota-beneficios {
+    font-size: 0.8rem;
+    color: #555555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nota-beneficios a {
+    color: #688243;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* =====================================================
+RESPONSIVE - PÁGINA PRINCIPAL VERABIOMA
+   ===================================================== */
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
+    .inicio {
+        padding: 30px 15px;
+    }
+
+    .inicio > h1 {
+        font-size: 38px;
+    }
+
+    .inicio > p {
+        font-size: 18px;
+    }
+
+    .oferta {
+        width: calc(50% - 10px);
+    }
+
+    #recetas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .producto-detalle {
+        padding: 25px;
+    }
+
+}
+
+
+/* ================= CELULAR ================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+
+    /* HEADER */
+
+    .container-header {
+        position: relative;
+    }
+
+    .logos {
+        padding: 10px 15px;
+    }
+
+    #imgSena,
+    #imgVerabioma {
+        width: 50px;
+    }
+
+    .vera1 {
+        font-size: 25px;
+    }
+
+    #nav {
+        padding: 10px;
+    }
+
+    #nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #nav ul li a {
+        font-size: 14px;
+    }
+
+
+    /* INICIO */
+
+    .inicio {
+        padding: 25px 12px;
+    }
+
+    .inicio > h1 {
+        font-size: 32px;
+    }
+
+    .inicio > p {
+        font-size: 16px;
+    }
+
+
+    /* OFERTAS */
+
+    #ofertas {
+        padding: 15px;
+    }
+
+    .oferta {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* RECETAS */
+
+    #recetas {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    #recetas h2 {
+        font-size: 20px;
+    }
+
+
+    /* PRODUCTOS */
+
+    .container-product {
+        padding: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* DETALLE PRODUCTO */
+
+    .producto-detalle {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .columna-izquierda {
+        width: 100%;
+    }
+
+    .inforText {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .botones-accion {
+        flex-direction: column;
+    }
+
+    .btn-favorito,
+    .btn-carrito {
+        width: 100%;
+    }
+
+
+    /* RESEÑAS */
+
+    #resenas {
+        padding: 15px;
+    }
+
+    .resena {
+        flex: 0 0 220px;
+    }
+
+
+    /* FOOTER */
+
+    .cabezadoSG {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ================= CELULAR PEQUEÑO ================= */
+
+@media (max-width: 480px) {
+
+    .logos {
+        padding: 8px 10px;
+    }
+
+    .vera1 {
+        font-size: 21px;
+    }
+
+    #imgSena,
+    #imgVerabioma {
+        width: 42px;
+    }
+
+    #nav ul {
+        gap: 10px;
+    }
+
+    #nav ul li a {
+        font-size: 12px;
+    }
+
+    .inicio > h1 {
+        font-size: 27px;
+    }
+
+    .inicio > p {
+        font-size: 15px;
+    }
+
+    .oferta {
+        padding: 15px;
+    }
+
+    .oferta img {
+        height: 160px;
+    }
+
+    .producto-imagen img {
+        max-height: 250px;
+    }
+
+    .inforText h1 {
+        font-size: 1.3rem;
+    }
+
+    .cabezadoSG {
+        justify-content: center;
+        text-align: center;
+    }
+}
