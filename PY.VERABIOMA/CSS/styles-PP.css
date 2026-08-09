@@ -1,0 +1,553 @@
+/*VARIABLES*/
+
+:root {
+
+    --verde: #40582E;
+    --verde-claro: #6F8B4A;
+    --beige: #F4F1E7;
+    --blanco: #FFFFFF;
+    --gris: #666;
+    --negro: #222;
+    --radio: 12px;
+
+}
+
+/*CONFIGURACION GENERAL*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--beige);
+    color: var(--negro);
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/*ENCABEZADOS*/
+header {
+    width: 100%;
+    height: 70px;
+    background: var(--verde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 34px;
+    font-family: Georgia, serif;
+}
+
+.iconos-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.logo-header {
+    width: 42px;
+}
+
+.logo-sena {
+    width: 45px;
+}
+
+/*PANTALLAS*/
+
+.pantalla {
+    display: none;
+    min-height: calc(100vh - 150px);
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+/*cONTENEDOR*/
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+}
+
+/*BANNER*/
+
+.banner {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 45px;
+}
+
+/*TITULOS*/
+
+h2 {
+    font-size: 45px;
+    color: var(--verde);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 35px;
+    color: #555;
+}
+
+/*BOTONES*/
+
+.botones {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.botones button {
+    width: 230px;
+    height: 58px;
+    background: var(--verde);
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.botones button:hover {
+    background: #58743E;
+}
+
+/*FORMULARIOS*/
+
+.formulario {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.15);
+}
+
+.logo-formulario {
+    width: 95px;
+    margin-bottom: 20px;
+}
+
+.formulario input {
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+    padding-left: 15px;
+    font-size: 17px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+}
+
+.formulario button {
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+    background: var(--verde);
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/*PANTALLA GOOGLE*/
+
+.google-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.google-caja {
+    width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .15);
+    padding: 35px;
+}
+
+.google-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.google-header img {
+    width: 45px;
+    margin-bottom: 15px;
+}
+
+.google-header h2 {
+    font-size: 30px;
+    color: #202124;
+    margin-bottom: 10px;
+}
+
+.google-header p {
+    color: #5f6368;
+    font-size: 16px;
+}
+
+.btn-google{
+    width:100%;
+    height:50px;
+    margin:20px 0;
+    background:#fff;
+    color:#444;
+    border:1px solid #dadce0;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.btn-google:hover{
+    background:#f8f9fa;
+    border-color:#c6c6c6;
+}
+
+.btn-google img{
+    width:22px;
+    height:22px;
+}
+
+.cuenta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 12px;
+}
+
+.cuenta:hover {
+    background: #f1f3f4;
+}
+
+.cuenta img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.cuenta h3 {
+    font-size: 18px;
+    color: #202124;
+}
+
+.cuenta span {
+    color: #5f6368;
+    font-size: 15px;
+}
+
+.cuenta i {
+    font-size: 22px;
+    color: #4285F4;
+}
+
+/*CODIGO VERIFICACION*/
+
+.codigo {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.codigo input {
+    width: 55px;
+    height: 60px;
+    text-align: center;
+    font-size: 26px;
+}
+
+/*BIENVENIDA*/
+
+#bienvenida {
+    text-align: center;
+}
+
+#bienvenida h2 {
+    margin-top: 100px;
+    font-size: 55px;
+}
+
+#bienvenida button {
+    margin-top: 40px;
+}
+
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    height: 80px;
+    background: var(--beige);
+    border-top: 2px solid #DDD;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    margin-top: 50px;
+}
+
+footer div:first-child {
+    font-size: 24px;
+    color: var(--verde);
+    font-family: Georgia, serif;
+}
+
+footer i {
+    font-size: 20px;
+    color: var(--verde);
+    margin: 0 8px;
+}
+
+.logo-footer {
+    width: 40px;
+}
+
+/* RESPONSIVE - PANTALLAS DE ACCESO VERABIOMA*/
+
+/*TABLET*/
+
+@media (max-width: 992px) {
+
+    .formulario {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .google-caja {
+        width: 90%;
+        max-width: 420px;
+    }
+
+    .botones {
+        flex-wrap: wrap;
+    }
+
+    .botones button {
+        max-width: 230px;
+    }
+
+}
+
+
+/*CELULAR*/
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .formulario {
+        width: 95%;
+        padding: 30px 25px;
+    }
+
+    .logo-formulario {
+        width: 80px;
+    }
+
+    .formulario h1 {
+        font-size: 32px;
+    }
+
+    .formulario input {
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .formulario button {
+        height: 48px;
+        font-size: 16px;
+    }
+
+
+    /* GOOGLE */
+
+    .google-login {
+        padding: 30px 10px;
+    }
+
+    .google-caja {
+        width: 95%;
+        padding: 28px 20px;
+    }
+
+    .google-header h2 {
+        font-size: 26px;
+    }
+
+    .google-header p {
+        font-size: 15px;
+    }
+
+    .cuenta {
+        padding: 13px;
+    }
+
+
+    /* VERIFICACIÓN */
+
+    .codigo {
+        gap: 8px;
+    }
+
+    .codigo input {
+        width: 48px;
+        height: 55px;
+        font-size: 23px;
+    }
+
+
+    /* BIENVENIDA */
+
+    #bienvenida h2 {
+        margin-top: 60px;
+        font-size: 40px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        height: auto;
+        min-height: 80px;
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+}
+
+
+/*CELULARES PEQUEÑOS*/
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .formulario {
+        width: 100%;
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+
+    .formulario h1 {
+        font-size: 28px;
+    }
+
+    .logo-formulario {
+        width: 70px;
+    }
+
+
+    /* GOOGLE */
+
+    .google-login {
+        padding: 20px 5px;
+    }
+
+    .google-caja {
+        width: 100%;
+        padding: 22px 15px;
+    }
+
+    .google-header h2 {
+        font-size: 23px;
+    }
+
+    .google-header p {
+        font-size: 14px;
+    }
+
+    .cuenta {
+        gap: 10px;
+        padding: 11px;
+    }
+
+    .cuenta img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .cuenta h3 {
+        font-size: 16px;
+    }
+
+    .cuenta span {
+        font-size: 13px;
+    }
+
+
+    /* CÓDIGO */
+
+    .codigo {
+        gap: 5px;
+    }
+
+    .codigo input {
+        width: 42px;
+        height: 50px;
+        font-size: 21px;
+    }
+
+
+    /* BIENVENIDA */
+
+    #bienvenida h2 {
+        font-size: 32px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    footer div:first-child {
+        font-size: 20px;
+    }
+
+}

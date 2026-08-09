@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verabioma</title>
+    <link rel="stylesheet" href="CSS/styles-PP.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- NOTA: Bloqueo de avance en el historial cuando se está en el Login -->
+    <script>
+        // Si no hay sesión iniciada, anula la capacidad de darle "Adelante" hacia index-PG
+        if (localStorage.getItem('sesionIniciada') !== 'true') {
+            history.pushState(null, null, location.href);
+            window.onpopstate = function () {
+                history.go(1);
+            };
+        }
+    </script>
+</head>
+<body>
+
+    <!--ENCABEZADO-->
+    <header>
+        <div class="logo">
+            <h1>Verabioma</h1>
+        </div>
+
+        <div class="iconos-header">
+            <img src="img/logo.png" class="logo-header">
+            <img src="img/sena.png" class="logo-sena">
+        </div>
+
+    </header>
+
+
+    <!--INICIO-->
+
+    <section id="inicio" class="pantalla activa">
+        <div class="contenedor">
+            <img src="img/banner.jpeg" class="banner">
+            <h2>VENTA DE PRODUCTOS<br>NATURALES
+            </h2>
+            <p>
+                Mejora tu salud con nuestros
+                productos naturales.
+
+                Disfruta del Kéfir,
+                Colágeno Hidrolizado
+                y productos para mascotas.
+            </p>
+
+            <div class="botones">
+                <button onclick="mostrarPantalla('registro')">
+                    Crear Cuenta
+                </button>
+
+                <button onclick="mostrarPantalla('login')">
+                    Acceder
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!--LOGIN-->
+
+    <section id="login" class="pantalla">
+        <div class="formulario">
+            <img src="img/logo.png" class="logo-formulario">
+            <h2>ACCEDER</h2>
+
+            <input type="email" id="correo" placeholder="Correo electrónico">
+            <input type="password" id="password" placeholder="Contraseña">
+
+            <a onclick="mostrarPantalla('recuperar')">
+                ¿Olvidaste tu contraseña?
+            </a>
+
+            <button class="btn-google" onclick="mostrarPantalla('google')">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+                Continuar con Google
+            </button>
+
+                <button onclick="iniciarSesion()">
+                    Iniciar Sesión
+                </button>
+
+                <p>
+                    ¿No tienes cuenta?
+                    <span onclick="mostrarPantalla('registro')">
+                        Crear cuenta
+                    </span>
+                </p>
+        </div>
+    </section>
+
+    <!--REGISTRO-->
+
+    <section id="registro" class="pantalla">
+        <div class="formulario">
+            <img src="img/logo.png" class="logo-formulario">
+            <h2>CREAR CUENTA</h2>
+
+            <input type="text" id="nombreRegistro" placeholder="Nombre completo">
+
+            <input type="email" id="correoRegistro" placeholder="Correo">
+
+            <input type="password" id="passwordRegistro" placeholder="Contraseña">
+
+            <input type="password" id="confirmarRegistro" placeholder="Confirmar contraseña">
+
+            <button onclick="registrarUsuario()">
+                Registrarse
+            </button>
+
+            <p>
+                ¿Ya tienes cuenta?
+                <span onclick="mostrarPantalla('login')">
+                    Iniciar sesión
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <!--RECUPERAR-->
+
+    <section id="recuperar" class="pantalla">
+        <div class="formulario">
+            <h2>RECUPERAR CONTRASEÑA</h2>
+
+            <p>
+                Ingresa tu correo.
+            </p>
+
+            <input type="email" id="correoRecuperacion">
+
+            <button onclick="enviarCodigo()">
+                Enviar Código
+            </button>
+        </div>
+    </section>
+
+    <!--VERIFICACION-->
+
+    <section id="verificacion" class="pantalla">
+        <div class="formulario">
+            <h2>VERIFICACIÓN</h2>
+
+            <p>
+                Ingresa el código.
+            </p>
+
+            <div class="codigo">
+                <input maxlength="1" id="c1">
+                <input maxlength="1" id="c2">
+                <input maxlength="1" id="c3">
+                <input maxlength="1" id="c4">
+                <input maxlength="1" id="c5">
+            </div>
+
+            <button onclick="verificarCodigo()">
+                Verificar
+            </button>
+        </div>
+    </section>
+
+    <!--CAMBIAR CONTRASEÑA-->
+
+    <section id="nuevaPassword" class="pantalla">
+        <div class="formulario">
+            <h2>CAMBIAR CONTRASEÑA</h2>
+
+            <input type="password" id="nueva">
+            <input type="password" id="confirmar">
+
+            <button onclick="guardarPassword()">
+                Guardar
+            </button>
+        </div>
+    </section>
+
+    <!-- BIENVENIDA -->
+    <section id="bienvenida" class="pantalla">
+        <div class="contenedor">
+            <h2>¡BIENVENIDO!</h2>
+
+            <p id="mensajeBienvenida">
+                Has iniciado sesión correctamente.
+            </p>
+
+            <!-- NOTA: Este botón ejecuta la redirección hacia index-PG.html -->
+            <button onclick="entrarAlSistema()">Entrar al sistema</button>
+        </div>
+    </section>
+
+    <!--GOOGLE-->
+
+    <section id="google" class="pantalla">
+        <div class="google-login">
+            <div class="google-caja">
+                <div class="google-header">
+                    <img src="img/google.png">
+                    <h2>Elegir una cuenta</h2>
+                    <p>para continuar con Verabioma</p>
+                </div>
+
+                <div class="cuenta" onclick="seleccionarCuenta('Juli Gómez','juli@gmail.com')">
+
+                    <img src="img/usuario.png">
+
+                    <div>
+                        <h3>Juli Gómez</h3>
+                        <span>juli@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="cuenta" onclick="seleccionarCuenta('Juan Pérez','juan@gmail.com')">
+                    <img src="img/usuario.png">
+
+                    <div>
+                        <h3>Juan Pérez</h3>
+                        <span>juan@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="cuenta" onclick="mostrarPantalla('otraCuenta')">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Usar otra cuenta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="otraCuenta" class="pantalla">
+        <div class="formulario">
+            <h2>
+                Iniciar sesión
+            </h2>
+            <input id="correoGoogle" type="email" placeholder="Correo electrónico">
+            <button onclick="usarOtraCuenta()">
+                Siguiente
+            </button>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+
+    <footer>
+        <div>
+            Verabioma
+        </div>
+
+        <div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <div>
+            <img src="img/sena.png" class="logo-footer">
+        </div>
+    </footer>
+
+    <script src="JS/script-PP.js"></script>
+    
+    <!-- Lógica de navegación entre archivos -->
+    <script>
+    function entrarAlSistema() {
+
+        // NOTA: 'replace' elimina esta página del historial para que el botón "Atrás" o "Adelante" del navegador no permita reingresar sin autenticarse.
+        window.location.replace('index-PG.html'); 
+
+    }
+
+    function seleccionarCuenta(nombre, correo) {
+
+        // NOTA: Guardamos la bandera de sesión activa en el navegador
+        localStorage.setItem('sesionIniciada', 'true');
+        localStorage.setItem('usuarioActivo', nombre);
+
+        const msj = document.getElementById('mensajeBienvenida');
+        if (msj) msj.innerText = `¡Hola ${nombre}! Has iniciado sesión correctamente.`;
+        mostrarPantalla('bienvenida');
+
+    }
+    </script>
+
+</body>
+</html>
